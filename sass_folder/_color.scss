@@ -1,0 +1,21 @@
+@import "variable";
+
+@each $color in $colors {
+    .color-#{$color} {
+        color: $color;
+    }
+
+    .bg-#{$color} {
+        background-color: $color;
+    }
+
+    @for $i from 1 through 9 {
+        .color-#{$color}-light-#{$i} {
+            color: mix($color, white, $i * 10);
+        }
+
+        .color-#{$color}-black-#{$i} {
+            color: mix($color, black, $i * 10);
+        }
+    }
+}
